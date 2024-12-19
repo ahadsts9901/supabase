@@ -3,18 +3,18 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { supabase } from '../config/supabase'
 import { useNavigate } from "react-router-dom"
 
-const Login = () => {
+const Signup = () => {
     const navigate = useNavigate()
     const [email, set_email] = useState("")
     const [password, set_password] = useState("")
 
-    const login = async (e: FormEvent) => {
+    const signup = async (e: FormEvent) => {
         e?.preventDefault()
         if (!email || !password) {
             alert("email and password are required")
             return
         }
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await supabase.auth.signUp({
             email: email,
             password: password,
             // options: {
@@ -27,14 +27,14 @@ const Login = () => {
     }
 
     return (
-        <form className="signup-form" onSubmit={login}>
-            <h2>Login</h2>
+        <form className="signup-form" onSubmit={signup}>
+            <h2>Signup</h2>
             <input type="text" placeholder='email' onChange={(e: ChangeEvent<HTMLInputElement>) => set_email(e.target.value)} />
             <input type="password" placeholder='password' onChange={(e: ChangeEvent<HTMLInputElement>) => set_password(e.target.value)} />
-            <button type='submit'>Login</button>
-            <a onClick={() => navigate("/signup")}>Signup</a>
+            <button type='submit'>Signup</button>
+            <a onClick={() => navigate("/login")}>Login</a>
         </form>
     )
 }
 
-export default Login
+export default Signup

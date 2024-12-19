@@ -1,0 +1,24 @@
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2em;
+
+    input,
+    button {
+        font-size: 1.2em;
+        padding: 0.5em 0.8em;
+    }
+
+    button{
+        cursor: pointer;
+    }
+
+    a{
+        cursor: pointer;
+        width: 100%;
+        text-align: right;
+        color: blue;
+    }
+}

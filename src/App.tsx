@@ -36,7 +36,7 @@ const App = () => {
               user ?
                 <Fragment>
                   <Route path="/" element={<Home set_global_user={set_user} />} />
-                  <Route path="/photos" element={<Storage set_global_user={set_user} />} />
+                  <Route path="/photos" element={<Storage />} />
                   <Route path="*" element={<Navigate to="/" replace={true} />} />
                 </Fragment> :
                 <Fragment>

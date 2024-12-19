@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { supabase } from "../config/supabase"
 import { useEffect, useState } from "react"
 import { get_user } from "../App"
+import Body from "./components/home/Body"
 
 const Home = ({ set_global_user }: any) => {
     const navigate = useNavigate()
@@ -33,6 +34,7 @@ const Home = ({ set_global_user }: any) => {
                 <h3>{user?.email}</h3>
                 <button onClick={logout}>Logout</button>
             </div>
+            <Body user={user} />
         </div>
     )
 }

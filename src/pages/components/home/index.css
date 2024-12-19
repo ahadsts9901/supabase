@@ -1,0 +1,18 @@
+.body-form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+.body-form input {
+  width: 100%;
+  padding: 0.5em 0.8em;
+  font-size: 1.2em;
+}
+.body-form button {
+  font-size: 1.2em;
+  padding: 0.5em 0.8em;
+  cursor: pointer;
+  width: 200px;
+}/*# sourceMappingURL=index.css.map */

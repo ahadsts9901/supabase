@@ -40,7 +40,7 @@ const Body = ({ user }: any) => {
             .select()
             .order('created_at', { ascending: false })
         if (error) {
-            alert(error.message)
+            alert(error?.message)
         }
         set_todos(data)
     }

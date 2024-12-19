@@ -1,11 +1,21 @@
+import { supabase } from "../../../config/supabase"
 import "./index.css"
 
-const Todo = ({ data }: any) => {
-    console.log(data)
+const Todo = ({ data, get }: any) => {
 
     const delTodo = async () => {
         const id = data?.id
         if (!id) return
+        const { error } = await supabase
+            .from('todos')
+            .delete()
+            .eq('id', id)
+        if (error) {
+            alert(error?.message)
+            return
+        }
+        get()
+
     }
 
     const updateTodo = async () => {

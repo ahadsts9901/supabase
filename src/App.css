@@ -13,3 +13,7 @@
   align-items: center;
   padding: 1em;
 }
+
+body{
+  overflow: hidden;
+}

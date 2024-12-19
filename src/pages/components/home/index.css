@@ -15,4 +15,47 @@
   padding: 0.5em 0.8em;
   cursor: pointer;
   width: 200px;
+}
+
+.todos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5em;
+  overflow-y: auto;
+}
+
+.todo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+}
+.todo p {
+  width: 100%;
+  text-align: left;
+}
+.todo .button-cont {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5em;
+}
+.todo .button-cont button {
+  cursor: pointer;
+  padding: 0.7em;
+  border: 0;
+  width: 80px;
+}
+.todo .button-cont .success {
+  background-color: green;
+  color: white;
+}
+.todo .button-cont .error {
+  background-color: red;
+  color: white;
 }/*# sourceMappingURL=index.css.map */

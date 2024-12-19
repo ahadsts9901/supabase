@@ -70,4 +70,17 @@
 .files-cont button {
   margin-top: 1em;
   width: 200px;
+}
+.files-cont img {
+  margin: 1em 0;
+  width: 80%;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px solid black;
+}
+.files-cont a {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

@@ -75,8 +75,23 @@
         cursor: pointer;
     }
 
-    button{
+    button {
         margin-top: 1em;
         width: 200px;
     }
+
+    img {
+        margin: 1em 0;
+        width: 80%;
+        height: 50%;
+        object-fit: cover;
+        border: 2px solid black;
+    }
+
+    a {
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+    }
+
 }

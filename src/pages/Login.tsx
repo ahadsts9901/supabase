@@ -17,12 +17,14 @@ const Login = () => {
         const { data, error } = await supabase.auth.signInWithPassword({
             email: email,
             password: password,
-            // options: {
-            //   emailRedirectTo: 'https://example.com/welcome',
-            // },
         })
 
-        console.log(data, error)
+        if (error) {
+            alert(error)
+        } else if (data) {
+            alert("login successfull")
+            navigate("/")
+        }
 
     }
 

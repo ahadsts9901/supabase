@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import Home from "./pages/Home"
+import Storage from "./pages/Storage"
 import { Fragment, useEffect, useState } from "react"
 import { supabase } from "./config/supabase"
 
@@ -35,6 +36,7 @@ const App = () => {
               user ?
                 <Fragment>
                   <Route path="/" element={<Home set_global_user={set_user} />} />
+                  <Route path="/photos" element={<Storage set_global_user={set_user} />} />
                   <Route path="*" element={<Navigate to="/" replace={true} />} />
                 </Fragment> :
                 <Fragment>

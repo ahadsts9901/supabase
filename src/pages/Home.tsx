@@ -32,7 +32,10 @@ const Home = ({ set_global_user }: any) => {
         <div className="main">
             <div className="header">
                 <h3>{user?.email}</h3>
-                <button onClick={logout}>Logout</button>
+                <div className="button-cont">
+                    <button onClick={logout}>Logout</button>
+                    <button onClick={() => navigate("/photos")}>Photos</button>
+                </div>
             </div>
             <Body user={user} />
         </div>

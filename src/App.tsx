@@ -13,27 +13,40 @@ export const get_user = async () => {
 
 const App = () => {
   const [user, set_user] = useState<any>(null)
+  const [loading, set_loading] = useState(false)
 
   useEffect(() => {
-    const user = get_user()
-    set_user(user)
+    get_current_user()
   }, [])
 
+  const get_current_user = async () => {
+    set_loading(true)
+    const user = await get_user()
+    set_loading(false)
+    set_user(user)
+  }
+
   return (
-    <Routes>
+    <Fragment>
       {
-        user ?
-          <Fragment>
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<Navigate to="/" replace={true} />} />
-          </Fragment> :
-          <Fragment>
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="*" element={<Navigate to="/login" replace={true} />} />
-          </Fragment>
+        loading ? <div>Loading...</div> :
+          <Routes>
+            {
+              user ?
+                <Fragment>
+                  <Route path="/" element={<Home set_global_user={set_user} />} />
+                  <Route path="*" element={<Navigate to="/" replace={true} />} />
+                </Fragment> :
+                <Fragment>
+                  <Route path="/signup" element={<Signup />} />
+                  <Route path="/login" element={<Login set_user={set_user} />} />
+                  <Route path="*" element={<Navigate to="/login" replace={true} />} />
+                </Fragment>
+            }
+          </Routes>
+
       }
-    </Routes>
+    </Fragment>
   )
 }
 

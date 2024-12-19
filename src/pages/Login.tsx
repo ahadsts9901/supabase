@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 import { supabase } from '../config/supabase'
 import { useNavigate } from "react-router-dom"
 
-const Login = () => {
+const Login = ({ set_user }: any) => {
     const navigate = useNavigate()
     const [email, set_email] = useState("")
     const [password, set_password] = useState("")
@@ -22,7 +22,7 @@ const Login = () => {
         if (error) {
             alert(error)
         } else if (data) {
-            alert("login successfull")
+            set_user(data)
             navigate("/")
         }
 
